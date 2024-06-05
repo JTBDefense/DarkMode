@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/icon_dark_mode"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_jtb" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark Mode"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+
+        <!-- Switch - On/Off -->
+        <Switch
+            android:id="@+id/switch_on_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
+    <!-- Slider 1 - Map visibility -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map Visibility"
+        android:paddingBottom="8dp" />
+    <SeekBar
+        android:id="@+id/slider_map_visibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progress="255"/>
+
+    <!-- Slider 2 - Interface visibility -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interface Visibility"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp" />
+    <SeekBar
+        android:id="@+id/slider_interface_visibility"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progress="255"/>
+
+    <!-- Slider 3 - Icons visibility -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Icons Visibility"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp" />
+    <SeekBar
+        android:id="@+id/slider_icons_visibility"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progress="255"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Brightness"
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp" />
+    <SeekBar
+        android:id="@+id/slider_phone_brightness"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:max="255"
+        android:progress="255"/>
+
+</LinearLayout>
