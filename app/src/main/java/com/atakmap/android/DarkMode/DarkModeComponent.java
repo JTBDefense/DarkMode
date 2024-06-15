@@ -45,7 +45,7 @@ public class DarkModeComponent extends DropDownMapComponent {
 
     public void onCreate(final Context context, Intent intent, final MapView view) {
         context.setTheme(R.style.ATAKPluginTheme);
-        DarkModePreferenceFragment preferencesFragment = new DarkModePreferenceFragment(context);
+        //DarkModePreferenceFragment preferencesFragment = new DarkModePreferenceFragment(context);
         this.sharedPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
 
         Log.d(TAG, "Instantiating...");
@@ -63,28 +63,28 @@ public class DarkModeComponent extends DropDownMapComponent {
         this.registerDropDownReceiver(dropDown, ddFilter);
         Log.d(TAG, "Registered...");
 
-        ToolsPreferenceFragment
-                .register(
-                        new ToolsPreferenceFragment.ToolPreference(
-                                "Dark Mode Plugin Preferences",
-                                "Preferences for Dark Mode Plugin",
-                                "DarkModePreferences",
-                                context.getResources().getDrawable(R.drawable.ic_jtb, null),
-                                preferencesFragment));
+//        ToolsPreferenceFragment
+//                .register(
+//                        new ToolsPreferenceFragment.ToolPreference(
+//                                "Dark Mode Plugin Preferences",
+//                                "Preferences for Dark Mode Plugin",
+//                                "DarkModePreferences",
+//                                context.getResources().getDrawable(R.drawable.ic_jtb, null),
+//                                preferencesFragment));
 
-        openPreferencesReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                Log.d(TAG, "onReceive in openPreferencesReceiver, handling: " + intent.getAction());
-
-                Intent prefIntent = new Intent(MapView.getMapView().getContext(),
-                        SettingsActivity.class);
-                prefIntent.putExtra("toolkey", "DarkModePreferences");
-
-                ((Activity) MapView.getMapView().getContext()).startActivityForResult(prefIntent, 0);
-            }
-        };
-        AtakBroadcast.getInstance().registerReceiver(openPreferencesReceiver, new AtakBroadcast.DocumentedIntentFilter(OPEN_PREFERENCES_ACTION));
+//        openPreferencesReceiver = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                Log.d(TAG, "onReceive in openPreferencesReceiver, handling: " + intent.getAction());
+//
+//                Intent prefIntent = new Intent(MapView.getMapView().getContext(),
+//                        SettingsActivity.class);
+//                prefIntent.putExtra("toolkey", "DarkModePreferences");
+//
+//                ((Activity) MapView.getMapView().getContext()).startActivityForResult(prefIntent, 0);
+//            }
+//        };
+//        AtakBroadcast.getInstance().registerReceiver(openPreferencesReceiver, new AtakBroadcast.DocumentedIntentFilter(OPEN_PREFERENCES_ACTION));
 
 
     }
