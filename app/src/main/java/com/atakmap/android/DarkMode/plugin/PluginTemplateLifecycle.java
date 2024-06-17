@@ -7,11 +7,6 @@ import com.atak.plugins.impl.PluginContextProvider;
 import com.atakmap.android.DarkMode.DarkModeComponent;
 import com.atakmap.android.DarkMode.DarkModeTool;
 
-/**
- *
- * 
- *
- */
 public class PluginTemplateLifecycle extends AbstractPlugin {
 
    public PluginTemplateLifecycle(IServiceController serviceController) {

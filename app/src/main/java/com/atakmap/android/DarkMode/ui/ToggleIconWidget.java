@@ -13,20 +13,17 @@ import com.atakmap.android.widgets.MarkerIconWidget;
 import com.atakmap.android.widgets.RootLayoutWidget;
 import com.atakmap.coremap.log.Log;
 import com.atakmap.coremap.maps.assets.Icon;
-import com.atakmap.map.opengl.GLRenderGlobals;
 
 public class ToggleIconWidget extends MarkerIconWidget implements MapWidget.OnClickListener {
 
     private final static int ICON_WIDTH = 32;
     private final static int ICON_HEIGHT = 32;
     private final MapView mapView;
-    private final Context context;
 
     private final DarkModeDropDownReceiver dropDown;
 
     public ToggleIconWidget(final Context context, final MapView mapView, final DarkModeDropDownReceiver dropDown) {
         this.mapView = mapView;
-        this.context = context;
         this.dropDown = dropDown;
 
         Log.d("DarkMode", "ctr");

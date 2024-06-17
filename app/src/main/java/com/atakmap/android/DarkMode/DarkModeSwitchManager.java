@@ -18,17 +18,15 @@ public class DarkModeSwitchManager implements OnKeyListener {
     private boolean volumeDownPressed = false;
     private long lastVolumePressTime = 0;
     private static final long VOLUME_PRESS_DELAY = 500;
-    private DarkModeDropDownReceiver darkModeDropDownReceiver;
-    private Context context;
+    private final DarkModeDropDownReceiver darkModeDropDownReceiver;
 
-    private DarkModeSwitchManager(Context context, MapView mapView, DarkModeDropDownReceiver receiver) {
-        this.context = context;
+    private DarkModeSwitchManager(DarkModeDropDownReceiver receiver) {
         this.darkModeDropDownReceiver = receiver;
     }
 
-    public static synchronized DarkModeSwitchManager getInstance(Context context, MapView mapView, DarkModeDropDownReceiver receiver) {
+    public static synchronized DarkModeSwitchManager getInstance(DarkModeDropDownReceiver receiver) {
         if (_instance == null) {
-            _instance = new DarkModeSwitchManager(context, mapView, receiver);
+            _instance = new DarkModeSwitchManager(receiver);
         }
         return _instance;
     }
